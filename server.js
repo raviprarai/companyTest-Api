@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
-//!.....................Admin Parts...............................................//
+//!.....................user Parts...............................................//
 app.use("/userModel", require("./Router/userRouter"));
 app.use("/product", require("./Router/productRouter"));
 app.use("/cart", require("./Router/cartRouter"));
