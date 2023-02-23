@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const { connect } = require("./connection/dbConnection");
+ require("./connection/dbConnection");
 dotenv.config();
 //!This is a middlewares
 app.use(helmet());
@@ -13,7 +13,6 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
-connect();
 //!.....................Admin Parts...............................................//
 app.use("/userModel", require("./Router/userRouter"));
 app.use("/product", require("./Router/productRouter"));

@@ -1,16 +1,12 @@
-const mongoose = require("mongoose");
-
-const MONGO_URL = process.env.MONGO_URL;
-mongoose.set("strictQuery", false);
-exports.connect = () => {
-  mongoose
-    .connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then(() => console.log("DB Connected"));
-
-  mongoose.connection.on("error", (err) => {
-    console.log(`DB connection error: ${err.message}`);
-  });
-};
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/companytest',(err, res)=>
+{
+    if(err)
+    {
+        console.log('Database connection error',err);
+    }
+    else
+    {
+        console.log('Database is connected');
+    }
+});

@@ -77,7 +77,7 @@ exports.userLoginEmail = async (req, res) => {
             id: userResult._id,
             isUser: userResult.isUser,
           };
-          let token = jwt.sign(dataToken, process.env.JWT_SER, {
+          let token = jwt.sign(dataToken, "raviraitest", {
             expiresIn: "30d",
           });
 
